@@ -47,7 +47,7 @@ function multiplyReturnOne(numA, numB) {
 
 function multiplyReturnTen(numA, numB) {
   console.log("multiplyReturnTen() =>");
-  return Math.floor((numA * numB / 10) % 10);
+  return Math.trunc((numA * numB / 10) % 10);
 }
 
 let numA = 2021;
@@ -56,4 +56,4 @@ let multi = multiply(numA, numB);
 console.log(multi);
 console.log(multiplyReturnOne(numA, numB));
 console.log(multiplyReturnTen(numA, numB));
-console.log(multiplyReturnTen(9,9));
+console.log(multiplyReturnTen(-9,9));
