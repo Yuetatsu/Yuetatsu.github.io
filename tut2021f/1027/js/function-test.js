@@ -56,3 +56,4 @@ let multi = multiply(numA, numB);
 console.log(multi);
 console.log(multiplyReturnOne(numA, numB));
 console.log(multiplyReturnTen(numA, numB));
+console.log(multiplyReturnTen(9,9));
