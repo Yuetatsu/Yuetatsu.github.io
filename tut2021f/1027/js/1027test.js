@@ -5,7 +5,7 @@ console.log(variableA);
 let variableB = "最初の代入B";
 console.log(variableB);
 
-varibaleA = "二回目の代入A";
+variableA = "二回目の代入A";
 console.log(variableA);
 
 variableA = variableB;
