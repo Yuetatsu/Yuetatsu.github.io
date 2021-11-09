@@ -32,11 +32,11 @@ function changeGreen() {
 let modal3 = document.querySelector("#modal3");
 
 function appendCircle() {
-  modal3.innerHTML = modal3.innerHTML + "〇";
+  modal3.insertAdjacentText("beforeend", "〇");
 }
 
 function appendCross() {
-  modal3.innerHTML = modal3.innerHTML + "×";
+  modal3.insertAdjacentText("beforeend","×");
 }
 
 
