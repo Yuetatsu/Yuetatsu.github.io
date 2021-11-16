@@ -6,7 +6,7 @@ function checkAge() {
   let num = Number(document.querySelector('#age').value);
   let answer = document.querySelector('#answer');
   if(num < 20) {
-    if(num < 0) answer.innerHTML = "エラー";
+    if(num <= 0) answer.innerHTML = "エラー";
     else answer.innerHTML = "未成年";
   } else {
     if(num >= 65) answer.innerHTML = "高齢者";
