@@ -22,12 +22,12 @@ function doLoop() {
 function doFizzBuzz() {
   let i = 1;
   while(i <= 100) {
-    let ans = "";
-    if(i % 3 === 0)
+    let ans = "";     // 変数 ans を空文字で生成
+    if(i % 3 === 0)   // 3で割り切れるときansに "Fizz" を追加
       ans += "Fizz";
-    if(i % 5 === 0)
+    if(i % 5 === 0)   // 5で割り切れるときansに "Buzz" を追加
       ans += "Buzz";
-    if(ans === "")
+    if(ans === "")    // ansが空文字(3でも5でも割り切れない)の時、ansに数値を代入
       ans = i;
     document.querySelector("#answer2").innerHTML += ans + "<br>";
     i++;
@@ -42,6 +42,7 @@ function doCheckAnswers() {
   let str = document.querySelector("#input_string");
   let arr = Array.from(document.querySelectorAll(".answer-list li"));
 
+  // 変数 ans を空文字で生成
   let ans = "";
   // 文字列が一致する場合　"正解"を代入
   arr.forEach(function(element){
