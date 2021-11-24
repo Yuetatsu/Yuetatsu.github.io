@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>11/24 課題一覧</title>
+  <style type="text/css">
+    <!--
+    body {
+      margin: 0;
+    }
+
+    header {
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    #main_content {
+      width: 80%;
+      margin: auto;
+      background-color: lightblue;
+    }
+
+    #menu_bar {
+      background-color: lightpink;
+    }
+
+    #menu_bar ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    #menu_bar ul li {
+      display: inline;
+      float: left;
+      text-align: center;
+      width: 50%;
+    }
+
+    #menu_bar ul li div {
+      display: block;
+      height: 35px;
+      background-color: lightgray;
+    }
+
+    #menu_bar ul li div:hover {
+      background-color: gray;
+    }
+
+    .task_object {
+      background-color: lightsalmon;
+    }
+
+    .task_header {
+      height: 100px;
+      font-size: 24px;
+      background-color: lightblue;
+    }
+
+    .task_content {
+      padding: 5%;
+      background-color: lightyellow;
+    }
+
+    .hide {
+      display: none;
+    }
+    -->
+  </style>
+</head>
+<body>
+<header><h1>11/24 課題一覧</h1></header>
+<main>
+  <div id="main_content">
+    <!-- メニューを設定　上のcssスタイルのwidthを適宜変更すること-->
+    <div id="menu_bar">
+      <ul>
+        <li><div onclick="contentShowing(0)">演習1</div></li>
+        <li><div onclick="contentShowing(1)">演習2</div></li>
+      </ul>
+    </div>
+    <!-- task_objectが一つのブロックになる。実際の課題コードはtask-contentに記載 -->
+    <div class="task_object">
+      <div class="task_header">
+        演習1
+      </div>
+      <div class="task_content">
+        <!-- while version -->
+        <div>
+          <p>
+            [while]処理結果↓
+          </p>
+          <hr>
+          <div id="answerWhile"></div>
+          <hr><br>
+        </div>
+        <!-- for version -->
+        <div>
+          <p>
+            [for]処理結果↓
+          </p>
+          <hr>
+          <div id="answerFor"></div>
+          <hr>
+        </div>
+        <script>
+          let fruitNames = ["りんご","みかん","いちご","いちじく"];
+        </script>
+      </div>
+    </div>
+    <div class="task_object hide">
+      <div class="task_header">
+        演習2
+      </div>
+      <div class="task_content">
+        <!-- while version -->
+        <div>
+          <p>
+            [while]処理結果↓
+          </p>
+          <hr>
+          <div id="answerWhile2"></div>
+          <hr><br>
+        </div>
+        <!-- for version -->
+        <div>
+          <p>
+            [for]処理結果↓
+          </p>
+          <hr>
+          <div id="answerFor2"></div>
+          <hr>
+        </div>
+        <script>
+          // JavaScript中で使うための配列
+          let tweets = [
+            { name: "太郎", message: "満腹度が回復した", tweetedAt: "2018-11-01 20:05:38" },
+            { name: "太郎", message: "もぐもぐ・・・", tweetedAt: "2018-11-01 19:50:22" },
+            { name: "太郎", message: "ごはんつくった！", tweetedAt: "2018-11-01 19:48:01" },
+            { name: "太郎", message: "お腹空いたなあ....", tweetedAt: "2018-11-01 19:30:59" },
+            { name: "太郎", message: "お腹空いたなあ", tweetedAt: "2018-11-01 19:08:01" }
+          ];
+        </script>
+      </div>
+    </div>
+  </div>
+</main>
+<script type="text/javascript" src="js/tasks.js"></script>
+</body>
+</html>
