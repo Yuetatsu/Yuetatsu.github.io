@@ -11,12 +11,25 @@ while(i < fruitNames.length) {
 }
 ansWhile.innerHTML = `<ul>${ansWhile.innerHTML}</ul>`;
 
+
+
 /* for version */
 let ansFor = document.querySelector("#answerFor");
 for(let j = 0; j < fruitNames.length; j++) {
   ansFor.innerHTML += `<li>${fruitNames[j]}</li>`
 }
 ansFor.innerHTML = `<ul>${ansFor.innerHTML}</ul>`;
+
+
+
+/* Array.forEach version */
+let ansArray = document.querySelector("#answerArray");
+fruitNames.forEach(function(fruit) {
+  ansArray.innerHTML += `<li>${fruit}</li>`;
+});
+ansArray.innerHTML = `<ul>${ansArray.innerHTML}</ul>`;
+
+
 
 /*--------------------
   演習2
@@ -31,12 +44,25 @@ while(k < tweets.length) {
 }
 ansWhile2.innerHTML = `<ul>${ansWhile2.innerHTML}</ul>`;
 
+
+
 /* for version */
 let ansFor2 = document.querySelector("#answerFor2");
 for(let l = 0; l < tweets.length; l++) {
   ansFor2.innerHTML += `<li><b>${tweets[l].name}</b>: ${tweets[l].message} <i>${tweets[l].tweetedAt}</i></li>`
 }
 ansFor2.innerHTML = `<ul>${ansFor2.innerHTML}</ul>`;
+
+
+
+/* Array.forEach version */
+let ansArray2 = document.querySelector("#answerArray2");
+tweets.forEach(function(tweet) {
+  ansArray2.innerHTML += `<li><b>${tweet.name}</b>: ${tweet.message} <i>${tweet.tweetedAt}</i></li>`
+});
+ansArray2.innerHTML = `<ul>${ansArray2.innerHTML}</ul>`;
+
+
 
 /*--------------------
   TASK SHOWING FUNCTION
