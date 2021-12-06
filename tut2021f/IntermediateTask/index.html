@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>中間課題 -M0119140-</title>
+  <style>
+    body {
+      width: 50%;
+      margin: auto;
+      border: 1px lightgray solid;
+      border-radius: 10px;
+    }
+
+    hr {
+      border-color: white;
+    }
+
+    #selector, #tweetBlocks {
+      padding: 10px;
+    }
+
+    #selector div {
+      padding: 10px;
+      background-color: darkgray;
+      color: white;
+    }
+
+    .tBlock {
+      display: flex;
+    }
+
+    .tBlock img {
+      width: 100px;
+      border: 1px lightgray solid;
+      margin: 5px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- ユーザー名の一覧表示(セレクター) -->
+  <div id="selector" style="display: flex;"></div>
+  <!-- ツイートブロック本体の表示 -->
+  <div id="tweetBlocks"></div>
+  <script type="text/javascript" src="https://morimorihoge.github.io/teu2021f/tweets.js"></script>
+  <script type="text/javascript" src="js/showtweets.js"></script>
+</body>
+</html>
