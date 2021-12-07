@@ -15,6 +15,10 @@
       border-color: white;
     }
 
+    #selector {
+      display: flex;
+    }
+
     #selector, #tweetBlocks {
       padding: 10px;
     }
@@ -23,6 +27,7 @@
       padding: 10px;
       background-color: darkgray;
       color: white;
+      transition: background-color .5s;
     }
 
     #selector div:hover {
@@ -46,7 +51,7 @@
 </head>
 <body>
   <!-- ユーザー名の一覧表示(セレクター) -->
-  <div id="selector" style="display: flex;"></div>
+  <div id="selector"></div>
   <!-- ツイートブロック本体の表示 -->
   <div id="tweetBlocks"></div>
   <script type="text/javascript" src="https://morimorihoge.github.io/teu2021f/tweets.js"></script>
