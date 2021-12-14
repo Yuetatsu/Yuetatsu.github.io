@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>書籍検索API</title>
+  <style>
+    pre {
+      font-size: 16px;
+    }
+
+    .block {
+      display: flex;
+    }
+
+    .block img {
+      min-width: 20%;
+      border: 1px lightgray solid;
+      margin: 5px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>書籍検索システム</h1>
+    <input type="text" id="searchWord">
+    <select name="searchType" id="searchType">
+      <option value="keyword:">キーワード</option>
+      <option value="title:">タイトル</option>
+      <option value="author:">著者</option>
+      <option value="isbn:">ISBNコード</option>
+    </select>
+    <button type="submit" onclick="SearchBooks()">検索</button>
+    <hr>
+    <div id="showArea"></div>
+  </div>
+  <script type="text/javascript" src="js/task.js"></script>
+</body>
+</html>
