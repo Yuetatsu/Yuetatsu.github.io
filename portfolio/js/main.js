@@ -39,11 +39,16 @@ menuBtn.onclick = () => {
 
 // メインコンテンツ描画用変数
 let mb = document.querySelector(".p-main-body");
+
+mb.style.transform = "translateY(0)";
+
 let contents = document.querySelectorAll(".p-content");
 let cNum = 0;           // 表示中コンテンツナンバー
 let animated = false;   // アニメーション再生フラグ
 
 let imgs = document.querySelectorAll(".p-image-body");
+let showImg = true;
+
 
 // マウスホイール回転時に発火
 window.onwheel = (ev) => {
@@ -52,6 +57,13 @@ window.onwheel = (ev) => {
     document.documentElement.style.setProperty("--e-h", `-${(cNum-1) * 100}vh`);
     mb.classList.add("y-s-anime");
     animated = true;
+
+    imgs.forEach((e)=>{
+      showImg = false;
+      e.style.animationDirection = "reverse";
+      e.classList.add("img-show-anime");
+    })
+
     cNum--;
     console.log(`cNum = ${cNum}`);
   }else if(ev.deltaY > 0 && !animated && cNum < contents.length - 1){
@@ -59,6 +71,13 @@ window.onwheel = (ev) => {
     document.documentElement.style.setProperty("--e-h", `-${(cNum+1) * 100}vh`);
     mb.classList.add("y-s-anime");
     animated = true;
+
+    imgs.forEach((e)=>{
+      showImg = false;
+      e.style.animationDirection = "reverse";
+      e.classList.add("img-show-anime");
+    })
+
     cNum++;
     console.log(`cNum = ${cNum}`);
   }
@@ -67,15 +86,23 @@ window.onwheel = (ev) => {
 mb.addEventListener("animationend", ()=>{
   mb.classList.remove("y-s-anime");
   imgs.forEach((e)=>{
+    showImg = true;
     e.style.animationDirection = "normal";
     e.classList.add("img-show-anime");
   });
   mb.style.transform = `translateY(${cNum * -100}vh)`;
   animated = false;
+  console.log("mb EventListener");
 });
 
 // コンテンツイメージアニメーション
 imgs.forEach((e)=>{
   e.addEventListener("animationend", ()=>{
+    this.event.stopPropagation();
+    if(showImg)
+      e.style.opacity = "1";
+    else
+      e.style.opacity = "0";
+    e.classList.remove("img-show-anime");
   });
 });
