@@ -1,0 +1,124 @@
+body{
+  overflow: hidden;
+}
+
+body, html{
+  margin: 0;
+  padding: 0;
+}
+
+.p-content{
+  width: 100%;  height: 100vh;
+  position:relative;
+  display: block;
+  background-color: black;
+}
+
+.p-menuModal{
+  width: 100%;  height: 100vh;
+  position: fixed;
+  top: 0; right: 0;
+  background-color: white;
+}
+
+.x-s-anime{
+  animation-name: x-slide-anime;
+  animation-timing-function: cubic-bezier(0.0, 0.6, 0.85, 1);
+  animation-duration: 0.75s;
+  animation-fill-mode: both;
+}
+
+@keyframes x-slide-anime{
+  from{
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.y-s-anime{
+  animation-name: y-slide-anime;
+  animation-timing-function: ease-out;
+  animation-duration: 0.75s;
+}
+
+@keyframes y-slide-anime {
+  from{
+    transform: translateY(var(--s-h));
+  }
+  to{
+    transform: translateY(var(--e-h));
+  }
+}
+
+:root{
+  --s-h: 0;
+  --e-h: -100vh;
+}
+
+.is-hidden{
+  display: none;
+}
+
+header{
+  width: 100%;
+  top: 0; left: 0;
+  z-index: 100;
+  position: fixed;
+  display: block;
+}
+
+.p-header-contents{
+  padding: 100px 100px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.p-logo{
+  width: 200px; height: 50px;
+  background-color: yellow;
+  display: inline-block;
+}
+
+.p-menuIcon{
+  width: 50px; height: 50px;
+  background-color: yellowgreen;
+  display: inline-block;
+}
+
+.p-image-body{
+  overflow: hidden;
+  width: 1400px; height: 700px;
+  display:inline-block;
+  position: absolute;
+  top: 175px; left: 100px;
+}
+
+.p-content-image{
+  width: 100%; height: 100%;
+  transition: cubic-bezier(0.0, 0.5, 0.8, 1.0) transform 1.5s;
+}
+
+.p-content-image:hover {
+  transform: scale(1.1);
+}
+
+.img-show-anime{
+  animation-name: img-showing-anime;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes img-showing-anime{
+  from{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to{
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}

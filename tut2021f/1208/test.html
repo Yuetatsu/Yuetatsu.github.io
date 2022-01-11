@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="sheets"></div>
+<script type="text/javascript">
+  let arr;
+  fetch("https://sheets.googleapis.com/v4/spreadsheets/1sf4i7kqOzucvdK1LFzNLvXTpMbHCdplqkSrdMOrHPTg/values/sheet1!A1:C7?key=AIzaSyBHrsc5Ktg5KcIDab1davAjKef3Yv7D3iI").then(function(response){
+    return response.json()
+  }).then(function(json){
+    console.log(json);
+    let html ="<table>";
+    json.values.forEach((column) => {
+      html += `<tr><td>${column[0]}</td><td>${column[1]}</td><td>${column[2]}</td></tr>`;
+    })
+    html += "</table>";
+    document.querySelector("#sheets").innerHTML = html;
+  })
+
+</script>
+</body>
+</html>
