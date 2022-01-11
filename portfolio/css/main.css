@@ -192,7 +192,7 @@ header{
 }
 
 .p-header-contents{
-  padding: 100px 100px 0;
+  padding: 5% 100px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -235,11 +235,11 @@ header{
 
 .p-image-body{
   overflow: hidden;
-  width: 1400px; height: 800px;
+  width: 60%; height: auto;
   display:inline-block;
   position: absolute;
   opacity: 0;
-  top: 150px; left: 100px;
+  top: 120px; left: 100px;
 }
 
 .p-content-image{
@@ -271,7 +271,7 @@ header{
 /* スクロール */
 .scroll {
   position: absolute;
-  top: 90%; left: 50%;
+  top: 80%; left: 50%;
 }
 
 .chevron {
@@ -354,7 +354,7 @@ header{
 .p-text-anime{
   pointer-events: none;
   position: absolute;
-  top: 65%; right: 5%;
+  top: 60%; right: 5%;
 }
 
 .title {
