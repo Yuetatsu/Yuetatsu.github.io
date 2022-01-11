@@ -5,31 +5,62 @@ let titles = document.querySelectorAll(".title");
 // メニューアイコン
 let menuBtn = document.querySelector(".p-menuIcon");
 
+let mort = document.querySelector(".menu-top");
+let morc = document.querySelector(".menu-center");
+let morb = document.querySelector(".menu-bottom");
+
+mort.addEventListener("animationend", ()=>{
+  if(mort.style.animationDirection === "normal")
+    mort.style.transform = "rotate(45deg) translate(11.25px, 11.25px)";
+  else
+    mort.style.transform = "rotate(0deg) translate(0, 0)";
+
+  mort.classList.remove("m-t-anime");
+});
+
+morc.addEventListener("animationend", ()=>{
+  if(morc.style.animationDirection === "normal")
+    morc.style.transform = "scaleX(0)";
+  else
+    morc.style.transform = "scaleX(1)";
+
+  morc.classList.remove("m-c-anime");
+});
+
+morb.addEventListener("animationend", ()=>{
+  if(morb.style.animationDirection === "normal")
+    morb.style.transform = "rotate(-45deg) translate(11.25px, -11.25px)";
+  else
+    morb.style.transform = "rotate(0deg) translate(0, 0)";
+
+  morb.classList.remove("m-b-anime");
+});
+
 // モーダルアニメーション終了時のDOMイベント
 modal.addEventListener("animationend", ()=>{
+  // 非表示状態を解除
   if(modal.classList.contains("is-hidden")){
     modal.classList.remove("is-hidden");
   }
 
+  // モーダルを非表示状態に遷移
   if(modal.classList.contains("closing")){
     modal.classList.add("is-hidden");
     modal.classList.remove("closing");
   }
 
+  // アニメーションを解除
   modal.classList.remove("x-s-anime");
 });
 
 // modalを表示&非表示
 menuBtn.onclick = () => {
-  let mt = document.querySelector(".menu-top");
-  let mc = document.querySelector(".menu-center");
-  let mb = document.querySelector(".menu-bottom");
 
-  // メニューアイコンアニメーション
-  mt.classList.add("m-t-anime");
-  mc.classList.add("m-c-anime");
-  mb.classList.add("m-b-anime");
-  // 以下、モーダル表示アニメーション用
+
+  morc.classList.remove("m-c-anime");
+  morb.classList.remove("m-b-anime");
+
+  // モーダル表示アニメーション用
   if(modal.classList.contains("is-hidden")){
     modal.classList.remove("is-hidden");
   }else{
@@ -39,18 +70,21 @@ menuBtn.onclick = () => {
   // アニメーション再生方向の指定
   if(modal.classList.contains("closing")){
     modal.style.animationDirection = "reverse";
-    mt.style.animationDirection = "reverse";
-    mc.style.animationDirection = "reverse";
-    mb.style.animationDirection = "reverse";
+    mort.style.animationDirection = "reverse";
+    morc.style.animationDirection = "reverse";
+    morb.style.animationDirection = "reverse";
   }else{
     modal.style.animationDirection = "normal";
-    mt.style.animationDirection = "normal";
-    mc.style.animationDirection = "normal";
-    mb.style.animationDirection = "normal";
+    mort.style.animationDirection = "normal";
+    morc.style.animationDirection = "normal";
+    morb.style.animationDirection = "normal";
   }
 
   // アニメーション再生
   modal.classList.add("x-s-anime");
+  mort.classList.add("m-t-anime");
+  morc.classList.add("m-c-anime");
+  morb.classList.add("m-b-anime");
 }
 
 
