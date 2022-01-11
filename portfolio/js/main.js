@@ -120,3 +120,18 @@ imgs.forEach((e)=>{
     e.classList.remove("img-show-anime");
   });
 });
+
+window.onload = function(){
+  let eAnime= document.querySelector(".p-enter-animation");
+  let upper = document.querySelector(".p-upper-block");
+  let lower = document.querySelector(".p-lower-block");
+  upper.classList.add("x-s-anime");
+  upper.style.animationDirection = "reverse";
+  lower.classList.add("x-s-l-anime");
+  lower.style.animationDirection = "reverse";
+
+  // 下部アニメーション終了時にトップアニメーションを隠す
+  lower.addEventListener("animationend", ()=>{
+    eAnime.style.zIndex = "-10";
+  });
+}
