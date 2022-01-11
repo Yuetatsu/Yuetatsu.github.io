@@ -74,6 +74,13 @@ body, html{
   font-family: Constantia, sans-serif;
   transform-origin: center center 0;
   color: darkcyan;
+  transition: background-color 1s, color .75s;
+}
+
+.p-modal-link span:hover{
+  background-color: whitesmoke;
+  color: darkred;
+  opacity: 0.8;
 }
 
 .m-t-anime, .m-c-anime, .m-b-anime{
