@@ -40,8 +40,6 @@ menuBtn.onclick = () => {
 // メインコンテンツ描画用変数
 let mb = document.querySelector(".p-main-body");
 
-mb.style.transform = "translateY(0)";
-
 let contents = document.querySelectorAll(".p-content");
 let cNum = 0;           // 表示中コンテンツナンバー
 let animated = false;   // アニメーション再生フラグ
