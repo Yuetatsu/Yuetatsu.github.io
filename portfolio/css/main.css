@@ -235,11 +235,11 @@ header{
 
 .p-image-body{
   overflow: hidden;
-  width: 60%; height: auto;
+  width: 70%; height: 70%;
   display:inline-block;
   position: absolute;
   opacity: 0;
-  top: 120px; left: 100px;
+  top: 20%; left: 100px;
 }
 
 .p-content-image{
