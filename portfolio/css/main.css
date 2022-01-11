@@ -32,6 +32,26 @@ body, html{
   background-color: black;
 }
 
+.p-bar{
+  display: inline-block;
+  position: absolute;
+  width: 45px; height: 3px;
+  border-radius: 2px;
+  background-color: darkcyan;
+}
+
+.menu-top{
+  top: 7px; left: 2px;
+}
+
+.menu-center{
+  top: 23px; left: 2px;
+}
+
+.menu-bottom{
+  top: 39px; left: 2px;
+}
+
 .p-content{
   width: 100%;  height: 100vh;
   position: relative;
@@ -40,9 +60,65 @@ body, html{
 
 .p-menuModal{
   width: 100%;  height: 100vh;
-  position: fixed;
+  position: absolute;
   top: 0; right: 0;
   background-color: black;
+  box-sizing: border-box;
+}
+
+.p-modal-link span{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 84px;
+  font-family: Constantia, sans-serif;
+  transform-origin: center center 0;
+  color: darkcyan;
+}
+
+.m-t-anime, .m-c-anime, .m-b-anime{
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.m-t-anime{
+  animation-name: m-top-anime;
+}
+
+.m-c-anime{
+  animation-name: m-center-anime;
+}
+
+.m-b-anime{
+  animation-name: m-bottom-anime;
+}
+
+@keyframes m-top-anime{
+  from{
+    transform: rotate(0deg) translate(0, 0);
+  }
+  to{
+    transform: rotate(45deg) translate(11.25px, 11.25px);
+  }
+}
+
+@keyframes m-center-anime{
+  from{
+    transform: scaleX(1);
+  }
+  to{
+    transform: scaleX(0);
+  }
+}
+
+@keyframes m-bottom-anime{
+  from{
+    transform: rotate(0deg) translate(0, 0);
+  }
+  to{
+    transform: rotate(-45deg) translate(11.25px, -11.25px);
+  }
 }
 
 .x-s-anime{
@@ -115,15 +191,21 @@ header{
 }
 
 .p-logo{
-  width: 200px; height: 50px;
-  background-color: yellow;
+  width: auto; height: 50px;
   display: inline-block;
+}
+
+.p-logo p{
+  margin: 0;
+  font-family: Constantia, sans-serif;
+  font-size: 48px;
+  color: darkcyan;
 }
 
 .p-menuIcon{
   width: 50px; height: 50px;
-  background-color: yellowgreen;
   display: inline-block;
+  position: relative;
 }
 
 .p-main-body{
@@ -265,30 +347,30 @@ header{
 .p-text-anime{
   pointer-events: none;
   position: absolute;
-  top: 50%; right: 5%;
+  top: 65%; right: 5%;
 }
 
 .title {
   overflow: hidden;
   text-align: right;
-  transform: translate(125%, 0);
+  transform: translate(150%, 0);
   transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
   color: darkcyan;
-  font-family: sans-serif;
+  font-family: Constantia, sans-serif;
 }
 
 .title h1{
-  margin: 0px; padding:0px;
+  margin: 0; padding:0;
   font-size: 96px;
 }
 
 .title h2{
-  margin: 0px; padding:0px;
+  margin: 0; padding:0;
   font-size: 32px;
 }
 
 .title h3{
-  margin: 0px; padding:0px;
+  margin: 0; padding:0;
   font-size: 24px;
 }
 

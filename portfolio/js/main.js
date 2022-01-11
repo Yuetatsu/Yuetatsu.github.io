@@ -21,6 +21,15 @@ modal.addEventListener("animationend", ()=>{
 
 // modalを表示&非表示
 menuBtn.onclick = () => {
+  let mt = document.querySelector(".menu-top");
+  let mc = document.querySelector(".menu-center");
+  let mb = document.querySelector(".menu-bottom");
+
+  // メニューアイコンアニメーション
+  mt.classList.add("m-t-anime");
+  mc.classList.add("m-c-anime");
+  mb.classList.add("m-b-anime");
+  // 以下、モーダル表示アニメーション用
   if(modal.classList.contains("is-hidden")){
     modal.classList.remove("is-hidden");
   }else{
@@ -30,8 +39,14 @@ menuBtn.onclick = () => {
   // アニメーション再生方向の指定
   if(modal.classList.contains("closing")){
     modal.style.animationDirection = "reverse";
+    mt.style.animationDirection = "reverse";
+    mc.style.animationDirection = "reverse";
+    mb.style.animationDirection = "reverse";
   }else{
     modal.style.animationDirection = "normal";
+    mt.style.animationDirection = "normal";
+    mc.style.animationDirection = "normal";
+    mb.style.animationDirection = "normal";
   }
 
   // アニメーション再生
