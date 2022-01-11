@@ -1,5 +1,7 @@
 let modal = document.querySelector(".p-menuModal");
 
+let titles = document.querySelectorAll(".title");
+
 // メニューアイコン
 let menuBtn = document.querySelector(".p-menuIcon");
 
@@ -62,6 +64,10 @@ window.onwheel = (ev) => {
       e.classList.add("img-show-anime");
     })
 
+    titles.forEach((e)=>{
+      e.classList.remove("-visible");
+    });
+
     cNum--;
     console.log(`cNum = ${cNum}`);
   }else if(ev.deltaY > 0 && !animated && cNum < contents.length - 1){
@@ -74,7 +80,11 @@ window.onwheel = (ev) => {
       showImg = false;
       e.style.animationDirection = "reverse";
       e.classList.add("img-show-anime");
-    })
+    });
+
+    titles.forEach((e)=>{
+      e.classList.remove("-visible");
+    });
 
     cNum++;
     console.log(`cNum = ${cNum}`);
@@ -88,6 +98,12 @@ mb.addEventListener("animationend", ()=>{
     e.style.animationDirection = "normal";
     e.classList.add("img-show-anime");
   });
+
+  // タイトルアニメーション実行
+  titles.forEach((e)=>{
+    e.classList.add("-visible");
+  });
+
   mb.style.transform = `translateY(${cNum * -100}vh)`;
   animated = false;
   console.log("mb EventListener");
