@@ -105,6 +105,8 @@ window.onload = function(){
   let upper = document.querySelector(".p-upper-block");       // 上部
   let lower = document.querySelector(".p-lower-block");       // 下部
 
+  let ttanime = document.querySelector(".p-top-text-anime");
+
   upper.classList.add("x-s-anime");
   upper.style.animationDirection = "reverse";
   lower.classList.add("x-s-l-anime");
@@ -114,6 +116,7 @@ window.onload = function(){
   lower.addEventListener("animationend", ()=>{
     if(!movePage)
       eAnime.style.zIndex = "-10";
+    ttanime.classList.add("p-t-t-anime");
     upper.classList.remove("x-s-anime");
     lower.classList.remove("x-s-l-anime");
   });
