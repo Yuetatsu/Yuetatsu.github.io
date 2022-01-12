@@ -148,7 +148,7 @@ mb.addEventListener("animationend", ()=>{
     e.classList.add("img-show-anime");
   });
 
-  // タイトルアニメーション実行
+  // テキストアニメーション実行
   titles.forEach((e)=>{
     e.classList.add("-visible");
   });
@@ -170,10 +170,16 @@ imgs.forEach((e)=>{
   });
 });
 
+let movePage = false;
+
 window.onload = function(){
+  movePage = false;
+
+  // 表示時のアニメーション再生
   let eAnime= document.querySelector(".p-enter-animation");
   let upper = document.querySelector(".p-upper-block");
   let lower = document.querySelector(".p-lower-block");
+
   upper.classList.add("x-s-anime");
   upper.style.animationDirection = "reverse";
   lower.classList.add("x-s-l-anime");
@@ -181,6 +187,36 @@ window.onload = function(){
 
   // 下部アニメーション終了時にトップアニメーションを隠す
   lower.addEventListener("animationend", ()=>{
-    eAnime.style.zIndex = "-10";
+    if(!movePage)
+      eAnime.style.zIndex = "-10";
+    upper.classList.remove("x-s-anime");
+    lower.classList.remove("x-s-l-anime");
+  });
+
+  // ページ間遷移
+  let links = document.querySelectorAll("a");
+
+  links.forEach((link)=>{
+    let eAnime= document.querySelector(".p-enter-animation");
+    let upper = document.querySelector(".p-upper-block");
+    let lower = document.querySelector(".p-lower-block");
+
+    link.addEventListener("click", (e)=>{
+      e.preventDefault();
+      movePage = true;
+      eAnime.style.zIndex = "200";
+      upper.classList.remove("x-s-anime");
+      upper.classList.add("x-s-anime");
+      upper.style.animationDirection = "normal";
+      lower.classList.add("x-s-l-anime");
+      lower.style.animationDirection = "normal";
+    });
+
+    eAnime.addEventListener("animationend", ()=>{
+      if(movePage){
+        let pl = link.getAttribute("href");
+        location.href = pl;
+      }
+    });
   });
 }
