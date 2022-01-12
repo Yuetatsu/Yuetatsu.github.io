@@ -199,6 +199,7 @@ header{
 
 .p-logo{
   width: auto; height: 50px;
+  text-decoration: none;
   display: inline-block;
 }
 
